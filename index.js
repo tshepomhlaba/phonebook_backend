@@ -1,6 +1,8 @@
 const express = require("express");
+const morgan = require("morgan");
 const app = express();
 
+//Persons Array with phoneboook numbers
 let persons = [
   {
     id: "1",
@@ -23,6 +25,12 @@ let persons = [
     number: "39-23-6423122",
   },
 ];
+
+morgan.token("body", (req) => {
+  return req.method === "POST" ? JSON.stringify(req.body) : "";
+});
+
+app.use(morgan(":method :url :status :response-time ms :body"));
 
 app.use(express.json());
 
