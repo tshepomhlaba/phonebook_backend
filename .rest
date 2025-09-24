@@ -4,4 +4,4 @@ GET http://localhost:3001/api/persons/
 POST http://localhost:3001/api/persons/ HTTP/1.1
 content-type: application/json
 
-{"name": "Zandile Mnisi", "number": "891-234-7590"}
+{"name": "Hloni David", "number": "575-678-2534"}
